@@ -390,11 +390,7 @@ describe('Auth routes', () => {
       const verifyEmailToken = tokenService.generateToken(userOne._id, expires);
       await tokenService.saveToken(verifyEmailToken, userOne._id, expires, tokenTypes.VERIFY_EMAIL);
 
-      await request(app)
-        .post('/auth/verify-email')
-        .query({ token: verifyEmailToken })
-        .send()
-        .expect(httpStatus.NO_CONTENT);
+      await request(app).post('/auth/verify-email').query({ token: verifyEmailToken }).send().expect(httpStatus.NO_CONTENT);
 
       const dbUser = await User.findById(userOne._id);
 

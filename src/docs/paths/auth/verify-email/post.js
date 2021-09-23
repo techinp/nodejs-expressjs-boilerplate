@@ -30,7 +30,7 @@ const post = {
     },
   },
   security: {
-    bearerAuth: [],
+    Bearer: [],
   },
 };
 

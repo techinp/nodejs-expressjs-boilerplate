@@ -3,7 +3,7 @@ const post = {
   description: 'Only admins can create other users.',
   tags: ['Users'],
   security: {
-    bearerAuth: [],
+    Bearer: [],
   },
   requestBody: {
     required: true,

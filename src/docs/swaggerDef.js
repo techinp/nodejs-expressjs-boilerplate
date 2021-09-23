@@ -149,16 +149,26 @@ const swaggerDef = {
       },
     },
     securitySchemes: {
-      bearerAuth: {
+      Bearer: {
         type: 'apiKey',
         in: 'header',
+        description: 'Enter JWT token only',
         bearerFormat: 'JWT',
+      },
+      BasicAuth: {
+        type: 'http',
+        scheme: 'basic',
       },
     },
   },
-  security: {
-    bearerAuth: [],
-  },
+  security: [
+    {
+      Bearer: [],
+    },
+    {
+      BasicAuth: [],
+    },
+  ],
   paths: {
     '/auth/register': Auth.Register,
     '/auth/login': Auth.Login,

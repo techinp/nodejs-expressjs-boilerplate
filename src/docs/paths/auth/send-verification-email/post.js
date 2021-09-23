@@ -10,9 +10,11 @@ const post = {
       $ref: '#/components/responses/Unauthorized',
     },
   },
-  security: {
-    bearerAuth: [],
-  },
+  security: [
+    {
+      Bearer: [],
+    },
+  ],
 };
 
 module.exports = post;
